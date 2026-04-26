@@ -2,8 +2,8 @@ name: Auto Update Profile
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # Daily at 07:00 WIB
-  workflow_dispatch:        # Manual trigger
+    - cron: "0 0 * * *" # Daily at 07:00 WIB
+  workflow_dispatch: # Manual trigger
 
 permissions:
   contents: write
@@ -52,7 +52,7 @@ jobs:
           # PENTING: Ganti dengan noreply email GitHub kamu
           # Cek di: GitHub → Settings → Emails → "Keep my email address private"
           # Format: ID+USERNAME@users.noreply.github.com
-          git config --local user.email "ial07@users.noreply.github.com"
+          git config --local user.email "72238942+ial07@users.noreply.github.com"
           git config --local user.name "ial07"
           git add lastUpdated.json
           COMMIT_MSG=$(cat /tmp/msg.txt)
