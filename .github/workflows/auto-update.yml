@@ -1,0 +1,62 @@
+name: Auto Update Profile
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # Daily at 07:00 WIB
+  workflow_dispatch:        # Manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update and commit
+        run: |
+          node -e "
+          const fs = require('fs');
+          let data = { totalUpdates: 0, history: [] };
+          try { data = JSON.parse(fs.readFileSync('lastUpdated.json', 'utf8')); } catch(e) {}
+
+          const quotes = [
+            'Keep pushing forward',
+            'Code. Learn. Repeat.',
+            'Another day, another commit',
+            'Consistency is key',
+            'Building something great',
+            'Growing every day',
+            'Refining the craft',
+            'Always learning',
+            'Making progress',
+            'Ship it. Iterate. Improve.'
+          ];
+
+          const quote = quotes[Math.floor(Math.random() * quotes.length)];
+          const now = new Date();
+          data.lastUpdated = now.toISOString();
+          data.totalUpdates = (data.totalUpdates || 0) + 1;
+          data.lastQuote = quote;
+          data.history = (data.history || []);
+          data.history.unshift({ date: now.toISOString().split('T')[0], quote });
+          data.history = data.history.slice(0, 30);
+
+          fs.writeFileSync('lastUpdated.json', JSON.stringify(data, null, 2));
+          fs.writeFileSync('/tmp/msg.txt', quote);
+          "
+
+          # PENTING: Ganti dengan noreply email GitHub kamu
+          # Cek di: GitHub → Settings → Emails → "Keep my email address private"
+          # Format: ID+USERNAME@users.noreply.github.com
+          git config --local user.email "ial07@users.noreply.github.com"
+          git config --local user.name "ial07"
+          git add lastUpdated.json
+          COMMIT_MSG=$(cat /tmp/msg.txt)
+          if ! git diff --cached --quiet; then
+            git commit -m "$COMMIT_MSG"
+            git push
+          fi
