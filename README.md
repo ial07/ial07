@@ -4,7 +4,7 @@
 
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=3000&pause=1000&color=7EC8E3&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=50&lines=Building+products+that+matter+🚀;Fullstack+%2B+AI+Engineering;JavaScript+%7C+TypeScript+%7C+.NET+%7C+Laravel;React+%7C+Next.js+%7C+Flutter+%7C+Django" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=800&height=110&lines=Hey+there%2C+I'm+IAL!;Building+the+future%2C+one+commit+at+a+time;Turning+ideas+into+reality+with+code;Focused+on+crafting+elegant+solutions" alt="Typing SVG" />
   </a>
 </div>
 
@@ -35,23 +35,11 @@
 const dev: Developer = {
   name: "Ilham Malik",
   location: "Indonesia 🇮🇩",
-  roles: [
-    "Fullstack Engineer",
-    "AI Engineer",
-  ],
-  languages: [
-    "JavaScript", "TypeScript",
-    "C#", "PHP", "Python", "Dart"
-  ],
-  frameworks: [
-    ".NET Core", "Laravel", "Django",
-    "React", "Next.js", "Flutter"
-  ],
-  currentlyExploring: [
-    "LLM Integration",
-    "AI Agents & Automation",
-  ],
-  motto: "Ship it. Iterate. Improve."
+  roles: ["Fullstack Engineer", "AI Engineer"],
+  languages: ["JavaScript", "TypeScript", "C#", "PHP", "Python", "Dart"],
+  frameworks: [".NET Core", "Laravel", "Django", "React", "Next.js", "Flutter"],
+  currentlyExploring: ["LLM Integration", "AI Agents & Automation"],
+  motto: "Ship it. Iterate. Improve.",
 };
 ```
 
