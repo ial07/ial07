@@ -1,7 +1,11 @@
 {
-  "lastUpdated": "2026-08-11T01:49:32.343Z",
-  "totalUpdates": 108,
+  "lastUpdated": "2026-08-12T02:01:57.344Z",
+  "totalUpdates": 109,
   "history": [
+    {
+      "date": "2026-08-12",
+      "quote": "Refining the craft"
+    },
     {
       "date": "2026-08-11",
       "quote": "Keep pushing forward"
@@ -117,11 +121,7 @@
     {
       "date": "2026-07-14",
       "quote": "Ship it. Iterate. Improve."
-    },
-    {
-      "date": "2026-07-13",
-      "quote": "Consistency is key"
     }
   ],
-  "lastQuote": "Keep pushing forward"
+  "lastQuote": "Refining the craft"
 }
